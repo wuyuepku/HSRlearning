@@ -14,10 +14,10 @@ class MainDemo(MatlabUtil):
         MatlabUtil.__init__(self, prefix='maindemo_')
     
     def loaddata(self, data):
-        self.eq(self.nm("data"), data)
+        self._eq(self._nm("data"), data)
     
     def drawdata(self):
-        self.do("plot(%s)" % self.nm("data"))
+        self._do("plot(%s)" % self._nm("data"))
 
 if __name__ == '__main__':
     main()

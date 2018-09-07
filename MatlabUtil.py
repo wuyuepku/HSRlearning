@@ -9,11 +9,11 @@ class MatlabUtil:
         self.eng = matlab.engine.connect_matlab()  # connect otherwise create one
         self.prefix = prefix
     
-    def eq(self, var, command):
+    def _eq(self, var, command):
         return self.eng.eval("%s = %s;" % (var, command), nargout=0)
 
-    def do(self, command):
+    def _do(self, command):
         return self.eng.eval("%s;" % command, nargout=0)
     
-    def nm(self, name):
+    def _nm(self, name):
         return self.prefix + name
